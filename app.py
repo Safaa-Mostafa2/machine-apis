@@ -58,12 +58,15 @@ def post():
            "apiStatus":"true",
            "predicted": convertTuple(prediction_class_en),
           })
-        else : 
-            request.headers.get('lan') == 'ar':
+        elif request.headers.get('lan') == 'ar':
             return jsonify({
            "apiStatus":"true",
            "predicted": convertTuple(prediction_class_ar),
         })   
+        else :
+            return jsonify({
+           "message": "must be send lan in headers",
+        })  
 @app.route('/predictDiabetes',methods=['post'])
 def yy():  
         posted_data = request.get_json()
@@ -89,11 +92,14 @@ def yy():
            "apiStatus":"true",
            "predicted": convertTuple(prediction_class_en),
           })
-        else : 
-            request.headers.get('lan') == 'ar':
+        elif request.headers.get('lan') == 'ar':
             return jsonify({
            "apiStatus":"true",
            "predicted": convertTuple(prediction_class_ar),
+        })   
+        else :
+            return jsonify({
+           "message": "must be send lan in headers",
         })   
 
 if __name__ == '__main__':
