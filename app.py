@@ -58,7 +58,8 @@ def post():
            "apiStatus":"true",
            "predicted": convertTuple(prediction_class_en),
           })
-        else : request.headers.get('lan') == 'ar':
+        else : 
+            request.headers.get('lan') == 'ar':
             return jsonify({
            "apiStatus":"true",
            "predicted": convertTuple(prediction_class_ar),
@@ -88,7 +89,8 @@ def yy():
            "apiStatus":"true",
            "predicted": convertTuple(prediction_class_en),
           })
-        else : request.headers.get('lan') == 'ar':
+        else : 
+            request.headers.get('lan') == 'ar':
             return jsonify({
            "apiStatus":"true",
            "predicted": convertTuple(prediction_class_ar),
