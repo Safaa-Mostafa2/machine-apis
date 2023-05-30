@@ -25,7 +25,7 @@ def convertTuple(tup):
 
 
 @app.route('/',methods=['get'])
-def yy():  
+def hello():  
           return jsonify({
            "apiStatus":"true",
            "message": "hello world",
