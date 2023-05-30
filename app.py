@@ -24,6 +24,12 @@ def convertTuple(tup):
     return str
 
 
+@app.route('/',methods=['get'])
+def yy():  
+          return jsonify({
+           "apiStatus":"true",
+           "message": "hello world",
+          })
 
  
 @app.route('/predictHeart',methods=['post'])
